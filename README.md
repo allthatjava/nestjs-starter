@@ -30,6 +30,13 @@
 ```bash
 $ npm install
 $ npm install -g @nestjs/cli
+$ nest new nestjs-starter
+# install uuid package
+$ npm install uuid
+# install pipe related mode
+$ npm install class-validator class-transformer
+# install postgress driver and orm
+$ npm install typeorm @nestjs/typeorm pg
 ```
 
 ## Compile and run the project
@@ -43,6 +50,18 @@ $ npm run start:dev
 
 # production mode
 $ npm run start:prod
+```
+
+## Create new module
+```bash
+$ nest g module {module name}
+```
+
+## Create new controller/service
+```bash
+# --no-spec is optional
+$ nest g controller {module name} --no-spec
+$ nest g service tasks --no-spec
 ```
 
 ## Run tests
