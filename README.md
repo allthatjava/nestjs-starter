@@ -37,6 +37,18 @@ $ npm install uuid
 $ npm install class-validator class-transformer
 # install postgress driver and orm
 $ npm install typeorm @nestjs/typeorm pg
+# bcrypt encryption
+$ npm install bcrypt
+# for jwt
+$ npm install @nestjs/jwt @nestjs/passport passport passport-jwt @types/passport-jwt
+# for Windows environment variable usecase
+$ npm install -g cross-env
+# for environment variable
+$ npm install @nestjs/config
+# OPTIONAL - for configuaration variable check
+$ npm install @hapi/joi
+# OPTIONAL - then install this
+$ npm install @types/hapi__joi
 ```
 
 ## Compile and run the project
@@ -50,6 +62,19 @@ $ npm run start:dev
 
 # production mode
 $ npm run start:prod
+```
+
+For above command, following change must be made in package.json as well
+
+```
+  "scripts": {
+    ...
+    "start:dev": "cross-env STAGE=dev nest start --watch",
+    "start:debug": "cross-env STAGE=dev nest start --debug --watch",
+    "start:prod": "cross-env STAGE=prod node dist/main",
+    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
+    "test": "cross-env STAGE=dev jest",
+    ...
 ```
 
 ## Create new module
